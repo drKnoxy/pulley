@@ -11,6 +11,7 @@
 		http = require("https"),
 		fs = require("fs"),
 		prompt = require("prompt"),
+		os = require("os"),
 		request = require("request"),
 		colors = require("colors"),
 		pkg = require("./package"),
@@ -68,7 +69,7 @@
 				},
 				body: {
 					scopes: ["repo"],
-					note: "Pulley-" + Date.now(),
+					note: "Pulley-" + os.hostname(),
 					note_url: "https://github.com/jeresig/pulley"
 				}
 			}, function( err, res, body ) {
